@@ -1,33 +1,27 @@
 name: CI - Vérification du Code
-# Quand est-ce qu'on déclenche le robot ?
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
-# Qu'est-ce qu'on fait ?
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. On récupère ton code
-    - name: Checkout du code
-      uses: actions/checkout@v3
+      - name: Checkout du code
+        uses: actions/checkout@v3
 
-# 2. On installe Node.js (Version mise à jour)
-    - name: Installation de Node.js
-      uses: actions/setup-node@v3
-      with:
-      node-version: 20  # <-- ICI : On passe de 18 à 20
-      cache: 'npm'
+      - name: Installation de Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
 
-    # 3. On installe les dépendances (npm install)
-    - name: Installation des dépendances
-      run: npm ci
+      - name: Installation des dépendances
+        run: npm ci
 
-    # 4. On lance le Build (npm run build)
-    # C'est ici que ça plantera si tu as fait une erreur de code !
-    - name: Test de Build
-      run: npm run build
+      - name: Test de Build
+        run: npm run build
