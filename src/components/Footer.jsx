@@ -4,7 +4,7 @@ import { FaFacebookF, FaGithub, FaTiktok, FaMapMarkerAlt, FaPhone, FaEnvelope } 
 
 const Footer = () => {
   return (
-    <footer className="bg-black/40 border-t border-white/5 pt-16 pb-8 backdrop-blur-sm">
+    <footer className="bg-black/40 border-t border-white/5 pt-16 pb-8 backdrop-blur-sm relative z-20">
       <div className="container mx-auto px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           
@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-neon hover:text-black transition-all"><FaFacebookF /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-neon hover:text-black transition-all"><FaGithub /></a>
+              <a href="https://github.com/firstged" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-neon hover:text-black transition-all"><FaGithub /></a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-neon hover:text-black transition-all"><FaTiktok /></a>
             </div>
           </div>
@@ -68,10 +68,10 @@ const Footer = () => {
 
         </div>
 
-        {/* COPYRIGHT */}
+        {/* COPYRIGHT SIGNÉ ONELMELVY */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono">
-          <p>© 2025 DEVS-SOLUTIONS. SYSTEM_ALL_RIGHTS_RESERVED.</p>
-          <p>Design & Code by <span className="text-neon">GFirst</span> de Devs-Solutions</p>
+          <p>© 2026 DEVS-SOLUTIONS. SYSTEM_ALL_RIGHTS_RESERVED.</p>
+          <p>Design & Code by <span className="text-neon font-bold">OnelMelvy</span> de Devs-Solutions</p>
         </div>
       </div>
     </footer>
