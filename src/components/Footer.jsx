@@ -71,7 +71,7 @@ const Footer = () => {
         {/* COPYRIGHT SIGNÉ ONELMELVY */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono">
           <p>© 2026 DEVS-SOLUTIONS. SYSTEM_ALL_RIGHTS_RESERVED.</p>
-          <p>Design & Code by <span className="text-neon font-bold">OnelMelvy</span> de Devs-Solutions</p>
+          <p>Design & Code by <span className="text-neon font-bold">OnelM</span> de Devs-Solutions</p>
         </div>
       </div>
     </footer>
