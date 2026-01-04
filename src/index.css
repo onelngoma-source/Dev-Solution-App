@@ -1,14 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --neon-green: #00ff88;
+}
+
 body {
-  @apply bg-darkbg text-white;
+  background-color: #050505;
+  color: white;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-.glass-card {
-  @apply bg-glass backdrop-blur-lg border border-white/10 rounded-2xl;
+/* --- 1. TEXTURE CYBER-GRILLE (Pour tuer le vide) --- */
+.bg-cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+/* --- 2. ANIMATION D'APPARITION (Scroll Reveal) --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0; /* Caché au début */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Délais pour l'effet "cascade" */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+/* --- 3. TYPOGRAPHIE OUTLINE (Effet géant vide) --- */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { bg: #000; }
+::-webkit-scrollbar-thumb { background: #00ff88; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00cc6a; }
+
+/* --- AJOUTS POUR LA VIE (ANIMATIONS) --- */
+
+/* 1. Animation de Flottement (Levitation) */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 2. Animation de Pulsation Néon */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 10px rgba(0, 255, 136, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.6), 0 0 60px rgba(0, 255, 136, 0.2); }
+  100% { box-shadow: 0 0 10px rgba(0, 255, 136, 0.2); }
+}
+
+.shadow-neon-pulse {
+  animation: neonPulse 3s infinite;
+}
+
+/* 3. Effet 3D Tilt pour les cartes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
 }
